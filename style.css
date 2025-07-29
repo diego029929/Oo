@@ -1,121 +1,178 @@
+:root {
+  --main-color: #000;
+  --accent-color: #ff4081;
+  --bg-light: #f9f9f9;
+  --text-dark: #222;
+  --text-light: #fff;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 header {
-  background-color: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+  background-color: var(--main-color);
+  color: var(--text-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: 1.5rem;
 }
 
 nav a {
-  color: white;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
+  color: var(--text-light);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
 }
 
 .hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
-  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
 }
 
 .hero .content {
-  flex: 1;
-  min-width: 280px;
-  max-width: 500px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
 }
 
 .hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
 }
 
-.hero .btn {
-  background-color: #000;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 10px;
+.btn {
+  background-color: var(--main-color);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #333;
 }
 
 .hero-right {
-  flex: 1;
-  min-width: 280px;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Fonctionnalités */
 .features ul {
-  list-style: none;
-  padding: 0;
-  font-size: 1.05rem;
+  list-style: none;
+  padding: 0;
 }
 
 .features li {
-  background: white;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  margin-bottom: 0.6rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  background: white;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 0.7rem;
 }
 
-/* Citation */
 .quote {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  font-style: italic;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  font-size: 1rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  font-style: italic;
+  box-shadow: var(--shadow);
 }
 
 .quote cite {
-  display: block;
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #555;
-  font-style: normal;
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: normal;
 }
 
-/* Loader */
 .loader {
-  width: 60px;
-  height: 60px;
-  border: 6px solid #ccc;
-  border-top: 6px solid #000;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: auto;
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top: 6px solid var(--main-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #eee;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #eee;
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right {
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  nav a {
+    margin-left: 0;
+  }
 }
