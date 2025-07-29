@@ -1,64 +1,121 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 header {
-  background-color: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
 nav a {
-  color: white;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  gap: 2rem;
 }
 
 .hero .content {
-  max-width: 50%;
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
 }
 
 .hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .hero .btn {
-  background-color: #000;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 10px;
+  background-color: #000;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 10px;
 }
 
-.hero img {
-  width: 300px;
-  height: auto;
-  border-radius: 1rem;
+.hero-right {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Fonctionnalités */
+.features ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.05rem;
+}
+
+.features li {
+  background: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Citation */
+.quote {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-style: italic;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  font-size: 1rem;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  font-style: normal;
+}
+
+/* Loader */
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top: 6px solid #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #eee;
-  }
+  text-align: center;
+  padding: 2rem;
+  background-color: #eee;
+}
