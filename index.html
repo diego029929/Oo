@@ -1,52 +1,149 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mini Site 3 - Application Mobile</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppHero</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      background-color: white;
+      height: 3px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        display: none;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1.5rem;
+      background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+
+    .btn {
+      background-color: #000;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #eee;
+      font-size: 0.9rem;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <h1>AppHero</h1>
-    <nav>
-      <a href="#">Accueil</a>
-      <a href="#">Fonctionnalités</a>
-      <a href="#">Avis</a>
-      <a href="#">Télécharger</a>
-    </nav>
-  </header>
+  <header>
+    <h1>AppHero</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="nav">
+      <a href="#">Accueil</a>
+      <a href="#">Fonctionnalités</a>
+      <a href="#">Avis</a>
+      <a href="#">Télécharger</a>
+    </nav>
+  </header>
 
-  <section class="hero">
-    <div class="content">
-      <h2>L'application mobile qui change votre quotidien</h2>
-      <p>Suivi, productivité, bien-être — tout dans une seule app.</p>
-      <a href="#" class="btn">Télécharger maintenant</a>
-    </div>
+  <section class="hero">
+    <h2>L'application mobile qui change votre quotidien</h2>
+    <p>Suivi, productivité, bien-être — tout dans une seule app.</p>
+    <a href="#" class="btn">Télécharger maintenant</a>
+  </section>
 
-    <div class="hero-right">
-      <div class="features">
-        <ul>
-          <li>✔ Suivi quotidien intelligent</li>
-          <li>✔ Notifications personnalisées</li>
-          <li>✔ Synchronisation multiplateforme</li>
-          <li>✔ Interface intuitive</li>
-        </ul>
-      </div>
+  <footer>
+    <p>&copy; 2025 AppHero. Tous droits réservés.</p>
+  </footer>
 
-      <blockquote class="quote">
-        “AppHero a révolutionné ma façon de gérer mes journées. Une app indispensable !”
-        <cite>— Clara, utilisatrice depuis 2025</cite>
-      </blockquote>
-
-      <div class="loader"></div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 AppHero. Tous droits réservés.</p>
-  </footer>
-
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
